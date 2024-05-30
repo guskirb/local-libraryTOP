@@ -6,7 +6,7 @@ exports.genre_list = asyncHandler(async (req, res, next) => {
     const allGenres = await Genre.find().sort({ name: 1 }).exec();
 
     res.render('genre_list', {
-        title: 'Author List',
+        title: 'Genre List',
         genre_list: allGenres,
     })
 });
