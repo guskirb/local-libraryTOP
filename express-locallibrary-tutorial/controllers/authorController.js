@@ -171,7 +171,6 @@ exports.author_update_post = [
         });
 
         if (!errors.isEmpty()) {
-        
             res.render('author_form', {
                 title: 'Update Author',
                 author: author,
