@@ -32,4 +32,12 @@ AuthorSchema.virtual('death_formatted').get(function () {
     return this.date_of_death ? DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_MED) : '';
 });
 
+AuthorSchema.virtual('birth_dd_mm_yyyy').get(function () {
+    return this.date_of_birth ? DateTime.fromJSDate(this.date_of_birth).toISODate() : '';
+});
+
+AuthorSchema.virtual('death_dd_mm_yyyy').get(function () {
+    return this.date_of_death ? DateTime.fromJSDate(this.date_of_death).toISODate() : '';
+});
+
 module.exports = mongoose.model('Author', AuthorSchema);
